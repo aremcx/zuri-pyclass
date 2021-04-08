@@ -25,6 +25,7 @@ if(userName in accessedUser):
             print("You've selected %s"% selectedOption)
             withdrawalMoney = int(input('How much would you like to withdraw? \n'))
             if(type(withdrawalMoney)) == int:
+                print('Processing........ pls wait.......')
                 print('Take your cash')
             else:
                 print('invalid input!')

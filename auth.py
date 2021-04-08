@@ -1,5 +1,5 @@
 
-#Register
+# Generating random number for Account Number
 import random
 
 def accountNumberGen():
@@ -7,11 +7,24 @@ def accountNumberGen():
 
 
 def registration():
-    userName = input('Enter your Name here: \n')
-    accessedUsers = {
-        'Abdul':'pass1','Aremu':'pass2','Wakil':'pass3'
-    }
-    # accessedPassword = []
+    _email = input('Enter your email address: \n')
+    _first_name = input('Enter your firstname : \n')
+    _last_name = input('Enter your lastname : \n')
+    _password =  input('Enter your Password: \n')
+
+    _accountNumber = accountNumberGen()
+
+    database[accountNumber] = [ first_name, last_name, email, password ]
+
+    print("Your Account Has been created")
+    print(" ===== ==== ====== ===== ====== ")
+    print("Your account number is: %d" % _accountNumber)
+    print("Make sure you keep it safe")
+    print(" ==== ==== ====== ===== =====")
+
+    login()
+
+    
 def init():
     print('Access Granted!\n Welcome %s!' % userName)
     print('These are the available Options')
@@ -20,13 +33,49 @@ def init():
     print('3. Complaints')
 
 def login():
-
     print('######### -Login- #########')
+    accountNumberFromUser = int(input("What is your account number? \n"))
+    password = input("What is your password \n")
+
+    for accountNumber,userDetails in da1tabase.items():
+        if(accountNumber == accountNumberFromUser):
+            if(userDetails[3] == password):
+                bankOperation(userDetails)
+               
+                
+    print('Invalid account or password')
+    login()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    userName = input('Enter your Name here: \n')
+    accessedUsers = {
+        'Abdul':'pass1','Aremu':'pass2','Wakil':'pass3'
+    }
+    # accessedPassword = []
+
+
     if(userName in accessedUser):
     passWord = input('Enter your Password: \n')
     userId = accessedUsers.index(userName)
 
-    if (passWord == accessedPassword[userId]):
+    if(passWord == accessedPassword[userId]):
         print("date and time =", dt_string)
         print('Access Granted!\n Welcome %s!' % userName)
         print('These are the available Options')
@@ -73,6 +122,12 @@ def bankOperations():
         print('Access Denied, incorrect password!')
 else:
     print('User not found, Try again!')
+    def logout():
+        #exit
+
+#### ACTUAL BANKING SYSTEM #####
+
+init()
 
 
 
