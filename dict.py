@@ -22,23 +22,22 @@ def accountNumberGen():
 
 def registration():
     _email = input('Enter your email address: \n')
-    _first_name = input('Enter your firstname : \n')
-    _last_name = input('Enter your lastname : \n')
+    _firstname = input('Enter your firstname : \n')
+    _lastname = input('Enter your lastname : \n')
     _password =  input('Enter your Password: \n')
 
     _accountNumber = accountNumberGen()
 
     print(_accountNumber)
 
-    database[accountNumber] = [ _first_name, _last_name, _email, _password ]
+    # database[accountNumber] = [ _first_name, _last_name, _email, _password ]
 
     print("Your Account Has been created")
     print(" ===== ==== ====== ===== ====== ")
     print("Your account number is: %d" % _accountNumber)
     print("Make sure you keep it safe")
     print(" ==== ==== ====== ===== =====")
-
+    print(f"Access Granted!\n Welcome {_firstname + ' ' +_lastname}! with account number {_accountNumber}")
 
 registration()
-
-    #login()
+login()

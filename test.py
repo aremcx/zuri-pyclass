@@ -39,7 +39,7 @@ def login():
     accountNumberFromUser = int(input("What is your account number? \n"))
     password = input("What is your password \n")
 
-    for accountNumber,userDetails in da1tabase.items():
+    for accountNumber,userDetails in database.items():
         if(accountNumber == accountNumberFromUser):
             if(userDetails[3] == password):
                 bankOperation(userDetails)
