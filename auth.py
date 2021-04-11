@@ -11,7 +11,8 @@ def accountNumberGen():
 
 
 def init():
-    print('Welcome Python Bank!!')
+    print('Welcome PyBank!!!')
+    print('Here we show you Snake Banking......$$$$$')
     checkedAccount = int(input("Do you have account with us: 1 (yes) 2 (no) \n"))
 
     if(checkedAccount == 1):
@@ -47,7 +48,7 @@ def registration():
 
     _accountNumber = accountNumberGen()
 
-    database[_accountNumber] = [ _email, _firstname, _lastname, _password ]
+    database[_accountNumber] = [ _email, _firstname, _lastname, _password,_accountNumber ]
 
     print("Your Account Has been created")
     print(" ===== ==== ====== ===== ====== ")
@@ -65,10 +66,10 @@ def registration():
 
 def bankOperations(accessedUser):
     print("date and time =", dt_string)
-    print(f"Access Granted!\n Welcome {accessedUser[0]}! with account number {accessedUser[1]}")
+    print(f"Access Granted!\n Welcome {accessedUser[1], accessedUser[2]}! with account number {accessedUser[4]}")
     #print(f"Access Granted!\n Welcome {_firstname + ' ' +_lastname}! with account number {_accountNumber}")
     #print(f"Welcome {_lastname} with Account number {_accountNumber}")
-    selectedOption = int(input('What would you like to do? (1) deposit (2) withdrawal (3) Report Issues (4) logout\n'))
+    selectedOption = int(input('What would you like to do? (1) Withdrawal (2) Deposite (3) Report Issues (4) logout\n'))
     if(selectedOption == 1):
         print("You've selected %s"% selectedOption)
         withdrawalMoney()

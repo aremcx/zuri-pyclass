@@ -9,6 +9,26 @@ def accountNumberGen():
     return random.randrange(1111111111,9999999999)
 
 
+def login():
+    
+    print("################## Login ##################")
+
+    accountNumberFromUser = int(input("What is your account number? \n"))
+    password = input("What is your password \n")
+
+    for accountNumber,userDetails in database.items():
+        if(accountNumber == accountNumberFromUser):
+            if(userDetails[3] == password):
+                bankOperation(userDetails)
+               
+                
+    print('Invalid account or password')
+    login()
+
+
+
+
+
 #Register
 
 def registration():
@@ -32,12 +52,25 @@ def registration():
     print(" ====== ==== ====== ===== =====")
 
 
-registration()
 
 login()
 
     
 def init():
+    print("Welcome to bankPHP")
+ 
+    haveAccount = int(input("Do you have account with us: 1 (yes) 2 (no) \n"))
+
+    if(haveAccount == 1):
+        
+        login()
+    elif(haveAccount == 2):
+        
+        register()
+    else:
+        print("You have selected invalid option")
+        init()
+
     print(f"Access Granted!\n Welcome {_firstname + ' ' +_lastname}! with account number {_accountNumber}")
     print("date and time =", dt_string)
     print('These are the available Options')
