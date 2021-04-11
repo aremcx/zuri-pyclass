@@ -11,8 +11,8 @@ def accountNumberGen():
 
 
 def init():
-    print('Welcome PyBank!!!')
-    print('Here we show you Snake Banking......$$$$$')
+    print('^^^^^^^^^^^ Welcome PyBank ^^^^^^^^^^^')
+    print('----------Here we show you Snake Banking......$$$$$-----------')
     checkedAccount = int(input("Do you have account with us: 1 (yes) 2 (no) \n"))
 
     if(checkedAccount == 1):
@@ -44,7 +44,7 @@ def registration():
     _email = input('Enter your email address: \n')
     _firstname = input('Enter your firstname : \n')
     _lastname = input('Enter your lastname : \n')
-    _password =  input('Enter your Password: \n')
+    _password =  input('Create password, and always remember your password : \n')
 
     _accountNumber = accountNumberGen()
 
@@ -53,7 +53,7 @@ def registration():
     print("Your Account Has been created")
     print(" ===== ==== ====== ===== ====== ")
     print("Your account number is: %d" % _accountNumber)
-    print("Make sure you keep it safe")
+    print("Make sure you keep it safe, it's confidential!!")
     print(" ==== ==== ====== ===== =====")
 
     login()
@@ -107,7 +107,9 @@ def bankOperations(accessedUser):
 def withdrawalMoney():
     withdrawalMoney = int(input('How much would you like to withdraw? \n'))
     if(type(withdrawalMoney)) == int:
+        print('Please wait while transaction is processing.............')
         print('Take your cash')
+        print('Thanks for banking with us, #StaySafe!')
     else:
         print('invalid input!')
 
@@ -116,7 +118,9 @@ def depositMoney():
     if(type(depositMoney)) == int:
         oldBal = 0
         currentBal = oldBal + depositMoney 
+        print('Please wait while transaction is processing.............')
         print('Current balance %s'%currentBal)
+        print('Thanks for banking with us, #StaySafe!')
     else:
         print('invalid input!')
 
@@ -131,6 +135,7 @@ def reportIssue():
 
 
 def logout():
+    print('Have a wonderfull day')
     exit()
 
 #### ACTUAL BANKING SYSTEM #####
